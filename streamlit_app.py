@@ -1,16 +1,4 @@
-st.title("🎈 My new app")
-st.write(
-st.write(f"선택한 나이: {age}")
-st.write(f"선택한 색상: {color}")
-st.write(f"선택한 과일: {fruit}")
-st.image(
 
-            factors.append(i)
-            n //= i
-    소인수 리스트를 지수 형태로 보기 좋게 변환합니다.
-    # LaTeX 문자열로 변환
-            parts.append(f"{factor}^{{{exponent}}}")
-st.set_page_config(page_title="소인수분해 계산기", page_icon="🔢")
 
 import streamlit as st
 from collections import Counter
@@ -70,39 +58,6 @@ st.set_page_config(page_title="소인수분해 계산기", page_icon="🔢")
 st.title("🔢 소인수분해 계산기")
 st.markdown("자연수를 입력하면 소인수분해 결과를 보여주는 웹 앱입니다.")
 st.markdown("---")
-
-# 사용자로부터 숫자 입력받기
-# min_value=2: 소인수분해는 2 이상의 자연수에 대해 의미가 있음
-# step=1: 정수만 입력받도록 설정
-number_to_factorize = st.number_input(
-    "소인수분해 할 자연수를 입력하세요 (2 이상)", 
-    min_value=2, 
-    step=1,
-    value=120  # 기본 예시 값
-)
-
-# '계산하기' 버튼을 누르면 소인수분해 실행
-if st.button("결과 확인하기"):
-    if number_to_factorize:
-        # 소인수분해 함수 호출
-        factors = prime_factorize(number_to_factorize)
-        
-        st.success(f"**{number_to_factorize}**의 소인수분해 결과입니다.")
-        
-        # 1. 기본 곱셈 형태로 결과 표시
-        st.subheader("곱셈 형태")
-        result_string = " x ".join(map(str, factors))
-        st.markdown(f"### `{result_string}`")
-
-        # 2. 지수 형태로 결과 표시 (LaTeX 사용)
-        st.subheader("지수 형태")
-        latex_result = format_factors_with_exponents(factors)
-        st.latex(f"{number_to_factorize} = {latex_result}")
-    else:
-        st.warning("숫자를 입력해주세요.")
-
-st.markdown("---")
-st.info("만든이: Gemini")
 
 # 사용자로부터 숫자 입력받기
 # min_value=2: 소인수분해는 2 이상의 자연수에 대해 의미가 있음
