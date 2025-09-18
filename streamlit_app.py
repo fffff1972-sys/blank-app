@@ -1,3 +1,21 @@
+# 소인수 분해 함수
+def prime_factors(n):
+    factors = []
+    d = 2
+    while d * d <= n:
+        while n % d == 0:
+            factors.append(d)
+            n //= d
+        d += 1
+    if n > 1:
+        factors.append(n)
+    return factors
+
+st.header("소인수 분해 앱")
+num = st.number_input("소인수 분해할 자연수를 입력하세요", min_value=2, step=1)
+if num:
+    factors = prime_factors(int(num))
+    st.write(f"{int(num)}의 소인수 분해 결과: {factors}")
 import streamlit as st
 
 st.title("🎈 My new app")
